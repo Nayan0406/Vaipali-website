@@ -10,7 +10,7 @@ const ProductList = () => {
   const fetchProducts = async () => {
     setLoading(true); // ✅ Start loading
     try {
-      const res = await axios.get("http://localhost:8000/api/products");
+      const res = await axios.get("https://vaipali-website-backend.vercel.app/api/products");
       setProducts(res.data.products);
     } catch (err) {
       console.error("Failed to fetch products", err);

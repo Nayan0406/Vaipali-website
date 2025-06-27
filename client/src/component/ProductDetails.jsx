@@ -11,7 +11,7 @@ const ProductDetails = () => {
 
   const fetchProduct = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/api/products/${id}`);
+      const res = await axios.get(`https://vaipali-website-backend.vercel.app/api/products/${id}`);
       setProduct(res.data.product);
     } catch (err) {
       console.error("Error fetching product:", err);
@@ -20,7 +20,7 @@ const ProductDetails = () => {
 
   const fetchOtherProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/products");
+      const res = await axios.get("https://vaipali-website-backend.vercel.app/api/products");
       const filtered = res.data.products.filter((p) => p._id !== id);
       setOtherProducts(filtered);
     } catch (err) {

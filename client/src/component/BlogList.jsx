@@ -10,7 +10,7 @@ const BlogList = () => {
   const fetchBlogs = async () => {
     setLoading(true); // ✅ start loading
     try {
-      const res = await axios.get("http://localhost:8000/api/blogs");
+      const res = await axios.get("https://vaipali-website-backend.vercel.app/api/blogs");
       setBlogs(res.data.blogs);
     } catch (err) {
       console.error("Error fetching blogs", err);

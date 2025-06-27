@@ -13,10 +13,10 @@ const BlogDetails = () => {
     const fetchBlogData = async () => {
       setLoading(true); // ✅ Start loading
       try {
-        const res = await axios.get(`http://localhost:8000/api/blogs/${id}`);
+        const res = await axios.get(`https://vaipali-website-backend.vercel.app/api/blogs/${id}`);
         setBlog(res.data.blog);
 
-        const allBlogs = await axios.get("http://localhost:8000/api/blogs");
+        const allBlogs = await axios.get("https://vaipali-website-backend.vercel.app/api/blogs");
         const filtered = allBlogs.data.blogs.filter((b) => b._id !== id);
         setOtherBlogs(filtered);
       } catch (err) {

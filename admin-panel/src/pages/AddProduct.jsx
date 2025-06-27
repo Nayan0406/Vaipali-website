@@ -13,7 +13,7 @@ const AddProduct = () => {
   // Fetch products from backend
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/products");
+      const res = await axios.get("https://vaipali-website-backend.vercel.app/api/products");
       setProducts(res.data.products);
     } catch (err) {
       toast.error("Failed to fetch products");
@@ -34,13 +34,13 @@ const AddProduct = () => {
 
     try {
       if (editingId) {
-        await axios.put(`http://localhost:8000/api/products/${editingId}`, formData, {
+        await axios.put(`https://vaipali-website-backend.vercel.app/api/products/${editingId}`, formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         toast.success("Product updated");
         setEditingId(null);
       } else {
-        await axios.post("http://localhost:8000/api/products", formData, {
+        await axios.post("https://vaipali-website-backend.vercel.app/api/products", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         toast.success("Product added");
@@ -65,7 +65,7 @@ const AddProduct = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        await axios.delete(`http://localhost:8000/api/products/${id}`);
+        await axios.delete(`https://vaipali-website-backend.vercel.app/api/products/${id}`);
         toast.success("Product deleted");
         fetchProducts();
       } catch (err) {
