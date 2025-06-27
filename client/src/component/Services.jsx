@@ -45,7 +45,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="bg-gradient-to-r from-[#1a1a2e] to-[#1e1e2f] text-white py-20 px-4">
+    <section className="bg-gradient-to-r bg-[#0f0f11]  text-white py-20 px-4">
       {/* Heading */}
       <div className="text-center max-w-4xl mx-auto mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">Services</h2>

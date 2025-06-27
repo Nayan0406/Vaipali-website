@@ -5,37 +5,38 @@ import {
   FaInstagram,
   FaTwitter,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="bg-[#0f0f11] text-white px-6 md:px-20 py-12">
       <div className="flex ml-30 mb-10">
-            <img src="/logo.png" alt="" className="h-6" />
-            <span>Vaipali</span>
-          </div>
+        <img src="/logo.png" alt="" className="h-6" />
+        <span>Vaipali</span>
+      </div>
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-12">
         {/* Logo & Contact Info */}
         <div className="space-y-6">
-          
+
           <div>
             <p className="text-sm font-semibold">Email</p>
             <p className="text-sm text-gray-400">support@vaipalipylt.io</p>
           </div>
           <div>
             <p className="text-sm font-semibold">Address</p>
-          <div className="text-sm text-gray-400">
-            <p className="font-semibold text-white">UK</p>
-            <p>1200 Blockchain Avenue, Suite 420, San Francisco</p>
-          </div><br/>
-          <div className="text-sm text-gray-400">
-            <p className="font-semibold text-white">INDIA</p>
-            <p>1200 Blockchain Avenue, Nagpur Maharashtra</p>
+            <div className="text-sm text-gray-400">
+              <p className="font-semibold text-white">UK</p>
+              <p>1200 Blockchain Avenue, Suite 420, San Francisco</p>
+            </div><br />
+            <div className="text-sm text-gray-400">
+              <p className="font-semibold text-white">INDIA</p>
+              <p>1200 Blockchain Avenue, Nagpur Maharashtra</p>
+            </div>
           </div>
-          </div>
-          
+
         </div>
 
-       
+
         <div className="space-y-4">
           <div>
             <p className="text-sm font-semibold">Phone Number</p>
@@ -46,11 +47,12 @@ const Footer = () => {
         {/* Explore */}
         <div className="space-y-2">
           <p className="text-sm font-semibold">Explore</p>
-          {["About Us", "Cases", "Services", "Blogs", "Contact"].map((item) => (
-            <p key={item} className="text-sm text-gray-400 hover:text-white cursor-pointer">
-              {item}
-            </p>
-          ))}
+          <Link to="/about" className="text-sm text-gray-400 hover:text-white cursor-pointer block">About Us</Link>
+          <Link to="/cases" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Cases</Link>
+          <Link to="/service" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Services</Link>
+          <Link to="/product" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Products</Link>
+          <Link to="/blog" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Blogs</Link>
+          <Link to="/contact" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Contact</Link>
         </div>
 
         {/* Resources */}

@@ -4,14 +4,18 @@ import AddBlog from './pages/AddBlog'
 import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AddProduct from './pages/AddProduct';
+import Navbar from './layout/Navbar';
 
 
 function App() {
   return (
     <div>
-
+      
+      <Navbar />
       <Routes>
         <Route path='/' element={<AddBlog />} />
+        <Route path='/admin/add-product' element={<AddProduct />}/>
       </Routes>
 
       <ToastContainer position="top-right" autoClose={3000} />

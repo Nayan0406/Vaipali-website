@@ -9,12 +9,12 @@ import SubscriptionSection from '../component/SubscriptionSection'
 const About = () => {
   return (
     <div>
-    <AboutSection />
-    <AboutVision />
-    <Services />
-    <OwnerSection />
-    <TeamSection />
-    <SubscriptionSection />
+      <AboutSection />
+      <AboutVision />
+      <Services />
+      <OwnerSection />
+      <TeamSection />
+      <SubscriptionSection />
     </div>
   )
 }

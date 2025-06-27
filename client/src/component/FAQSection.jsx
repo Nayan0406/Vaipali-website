@@ -33,7 +33,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="bg-gradient-to-r from-[#1a1a2e] to-[#1e1e2f] text-white px-4 py-16">
+    <section className="bg-gradient-to-r bg-[#0f0f11] text-white px-4 py-16">
       <div className="max-w-5xl mx-auto text-center mb-12 px-2">
         <h2 className="text-3xl md:text-4xl font-bold">Frequently asked</h2>
         <h3 className="text-3xl md:text-4xl font-semibold mt-2">Question ?</h3>

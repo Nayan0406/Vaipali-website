@@ -6,7 +6,7 @@ const InnovationSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
-          
+
           {/* Left Column */}
           <div className="lg:col-span-4 flex flex-col justify-between space-y-10">
             <div>
@@ -19,7 +19,7 @@ const InnovationSection = () => {
 
             <div className="bg-gray-800/60 backdrop-blur-md p-6 sm:p-8 rounded-md">
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-                Vaipali empowers developers, businesses, and <br/>innovators to break through the boundaries of traditional systems.
+                Vaipali empowers developers, businesses, and <br />innovators to break through the boundaries of traditional systems.
               </p>
               <div className="flex items-center justify-between">
                 <button className="text-white hover:text-gray-300 text-sm sm:text-base transition">

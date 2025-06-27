@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutVision = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white px-4 py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#0f0f11] text-white px-4 py-12 sm:px-6 lg:px-8">
       {/* Header Section */}
       <div className="text-center mb-16">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6">
@@ -33,8 +33,8 @@ const AboutVision = () => {
               <img src="/line.png" alt="Divider" />
             </div>
             <p className="text-sm sm:text-base lg:text-lg text-gray-300 font-light leading-relaxed">
-              "To be the trusted global partner delivering<br/> transformative IT solutions that empower
-              businesses<br/> to innovate, scale, and thrive in the digital era."
+              "To be the trusted global partner delivering<br /> transformative IT solutions that empower
+              businesses<br /> to innovate, scale, and thrive in the digital era."
             </p>
           </div>
         </div>
@@ -52,8 +52,8 @@ const AboutVision = () => {
               <img src="/line.png" alt="Divider" />
             </div>
             <p className="text-sm sm:text-base lg:text-lg text-gray-300 font-light leading-relaxed">
-              "At Vaipali, we harness over 18 years of global experience to provide <br/>bespoke IT
-              solutions, software consultancy, and development services. <br/>Our mission is to transform
+              "At Vaipali, we harness over 18 years of global experience to provide <br />bespoke IT
+              solutions, software consultancy, and development services. <br />Our mission is to transform
               ideas into impactful digital realities, enabling businesses to achieve their goals
               through innovation and excellence."
             </p>

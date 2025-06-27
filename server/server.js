@@ -5,9 +5,7 @@ import dotenv from "dotenv";
 import multer from "multer";
 import Blog from "./models/Blog.js";
 import { storage } from "./utlis/cloudinary.js"; 
-import blogRoutes from "./routes/blogRoutes.js";
-import authRoutes from "./routes/authRoutes.js";
-import axios from "axios";
+import productRoutes from "./routes/productRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -15,7 +13,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use(express.json());
-app.use("/api/auth", authRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
@@ -26,16 +23,11 @@ app.use(cors({
     credentials: true,
 }));
 
-app.use("/api/blogs", blogRoutes);
+// app.use("/api/blogs", blogRoutes);
 
 app.use('/uploads', express.static('uploads'));
 
-
-// axios.post("/api/blogs", formData, {
-//   headers: {
-//     "Authorization": `Bearer ${localStorage.getItem("token")}`
-//   }
-// });
+app.use("/api/products", productRoutes);
 
 
 mongoose.connect(process.env.MONGO_URI)
@@ -75,6 +67,16 @@ app.get("/api/blogs", async (req, res) => {
   }
 });
 
+app.get("/api/blogs/:id", async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+    if (!blog) return res.status(404).json({ message: "Blog not found" });
+    res.json({ blog });
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching blog" });
+  }   
+})
+
 // PUT: Update blog
 app.put("/api/blogs/:id", upload.single("image"), async (req, res) => {
   try {
@@ -106,4 +108,14 @@ app.delete("/api/blogs/:id", async (req, res) => {
   }
 });
 
+
+//product route
+// app.get('/api/products', async (req, res) => {
+//   try {
+//     const products = await Product.find();
+//     res.json(products);
+//   } catch (err) {
+//     res.status(500).json({ error: 'Server Error' });
+//   }
+// });
 

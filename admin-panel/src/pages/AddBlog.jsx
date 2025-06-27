@@ -82,7 +82,7 @@ const AddBlog = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white px-4 py-10">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-center">Admin Blog Panel</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center">Add Blogs</h1>
 
         {/* Blog Form */}
         <form onSubmit={handleSubmit} className="bg-gray-800 p-6 rounded-lg shadow-md space-y-5">

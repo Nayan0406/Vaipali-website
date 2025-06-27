@@ -24,14 +24,14 @@ const SubscriptionSection = () => {
     <div className="min-h-screen bg-[#0f0f11] text-white flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
       <div className="w-full max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          
+
           {/* Left Side - Form */}
           <div className="order-2 lg:order-1">
             <div className="bg-neutral-800  backdrop-blur-sm p-6 sm:p-8 lg:p-10">
               <h2 className="text-2xl sm:text-3xl font-medium mb-6 sm:mb-8">
                 Subscription
               </h2>
-              
+
               <div className="space-y-4 sm:space-y-6">
                 {/* Name Fields */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -48,7 +48,7 @@ const SubscriptionSection = () => {
                       className="w-full px-4 py-3 bg-transparent border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                     />
                   </div>
-                  
+
                   <div>
                     <div className="block text-sm font-medium text-gray-300 mb-2">
                       Last Name
@@ -63,7 +63,7 @@ const SubscriptionSection = () => {
                     />
                   </div>
                 </div>
-                
+
                 {/* Email Field */}
                 <div>
                   <div className="block text-sm font-medium text-gray-300 mb-2">
@@ -78,7 +78,7 @@ const SubscriptionSection = () => {
                     className="w-full px-4 py-3 bg-transparent border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
                   />
                 </div>
-                
+
                 {/* Submit Button */}
                 <button
                   onClick={handleSubmit}
@@ -97,7 +97,7 @@ const SubscriptionSection = () => {
               <br />
               the Future
             </h1>
-            
+
             <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed max-w-md mx-auto lg:mx-0">
               Be the first to know what's next in Web3. Subscribe to receive exclusive updates from Cubix — including product launches, platform upgrades, expert insights.
             </p>

@@ -5,8 +5,8 @@ import MapSection from '../component/MapSection'
 const Contact = () => {
   return (
     <div>
-      <ContactForm /> 
-      <MapSection /> 
+      <ContactForm />
+      <MapSection />
     </div>
   )
 }

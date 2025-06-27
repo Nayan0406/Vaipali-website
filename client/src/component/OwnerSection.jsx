@@ -17,7 +17,7 @@ const OwnerSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white px-4 py-16 sm:px-6 lg:px-12">
+    <div className="min-h-screen bg-[#0f0f11] text-white px-4 py-16 sm:px-6 lg:px-12">
       {/* Header */}
       <div className="text-center mb-16 px-4">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6">

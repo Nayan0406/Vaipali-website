@@ -114,11 +114,11 @@ const BlogCards = () => {
 
               {/* Content */}
               <div className="p-6">
-                
-                  <h3 className="text-xl font-semibold mb-4 text-white leading-tight group-hover:text-purple-400 transition-colors duration-300">
-                    {post.title}
-                  </h3>
-                
+
+                <h3 className="text-xl font-semibold mb-4 text-white leading-tight group-hover:text-purple-400 transition-colors duration-300">
+                  {post.title}
+                </h3>
+
 
                 {/* Author Info */}
                 <div className="flex items-center justify-between">

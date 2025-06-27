@@ -31,7 +31,7 @@ const ContactForm = () => {
             "Get in Touch"
           </h1>
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Reach out to us today—our team is here to collaborate, innovate, and help you 
+            Reach out to us today—our team is here to collaborate, innovate, and help you
             achieve your digital goals.
           </p>
         </div>
@@ -41,12 +41,12 @@ const ContactForm = () => {
           {/* Left Side - Image */}
           <div className="order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden ">
-              <img 
+              <img
                 src="/person-image.png"
                 alt="Person wearing VR headset in neon lighting"
                 className="pl-5 pt-5 pb-5 pr-5"
               />
-              
+
             </div>
           </div>
 
