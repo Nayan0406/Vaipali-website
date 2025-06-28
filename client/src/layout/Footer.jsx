@@ -15,18 +15,18 @@ const Footer = () => {
         <img src="/logo.png" alt="Vaipali Logo" className="h-6 mr-2" />
         <span className="font-semibold">Vaipali</span>
       </div>
-      
+
       <div className="max-w-screen-xl mx-auto">
         {/* Mobile: Stack vertically, Desktop: Grid layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
-          
+
           {/* Contact Info */}
           <div className="space-y-4 md:space-y-6 sm:col-span-2 lg:col-span-1 text-center lg:text-left">
             <div>
               <p className="text-sm font-semibold mb-1">Email</p>
               <p className="text-sm text-gray-400 break-all">support@vaipalipylt.io</p>
             </div>
-            
+
             <div>
               <p className="text-sm font-semibold mb-2">Phone Number</p>
               <p className="text-sm text-gray-400">+1 (415) 555-8743</p>
@@ -51,19 +51,14 @@ const Footer = () => {
           </div>
 
           {/* Explore */}
-          <div className="space-y-3 sm:col-span-1 lg:col-span-1 text-center lg:text-left">
-            <p className="text-sm font-semibold mb-3">Explore</p>
-            <div className="space-y-2">
-              {["About Us", "Cases", "Services", "Products", "Blogs", "Contact"].map((item, index) => (
-                <a 
-                  key={item} 
-                  href={`/${item.toLowerCase().replace(" ", "")}`}
-                  className="text-sm text-gray-400 hover:text-white cursor-pointer block transition-colors duration-200"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
+          <div className="space-y-2">
+            <p className="text-sm font-semibold">Explore</p>
+            <Link to="/about" className="text-sm text-gray-400 hover:text-white cursor-pointer block">About Us</Link>
+            <Link to="/cases" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Cases</Link>
+            <Link to="/service" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Services</Link>
+            <Link to="/product" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Products</Link>
+            <Link to="/blog" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Blogs</Link>
+            <Link to="/contact" className="text-sm text-gray-400 hover:text-white cursor-pointer block">Contact</Link>
           </div>
 
           {/* Resources */}
