@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeSection = () => {
   return (
-    <section className="bg-[#0f0f11] text-white py-16 px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen">
+    <section className=" text-white py-16 px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen">
       {/* Headline */}
       <div className="text-center mb-16">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
@@ -24,7 +24,7 @@ const HomeSection = () => {
 
           {/* Quote Box */}
           <div className="bg-[#1a1a1f] p-4 text-sm max-w-xs rounded">
-            <p className="italic text-gray-300">"YOUR VISION,<br />OUR CODE."</p>
+            <p className="italic text-gray-300 ">"YOUR VISION,<br />OUR CODE."</p>
             <p className="text-xs text-gray-400 mt-4">Follow us on :</p>
             <div className="flex gap-4 mt-3">
               <img src="/Instagram.png" alt="Instagram" className="h-8 w-8" />
@@ -85,3 +85,5 @@ const HomeSection = () => {
 };
 
 export default HomeSection;
+
+
