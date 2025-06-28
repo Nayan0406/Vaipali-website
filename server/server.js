@@ -23,6 +23,14 @@ app.use(cors({
     credentials: true,
 }));
 
+const corsOptions = {
+  origin: ["https://your-frontend.vercel.app"], // or "*" for development
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
 // app.use("/api/blogs", blogRoutes);
 
 app.use('/uploads', express.static('uploads'));
