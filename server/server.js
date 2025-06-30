@@ -8,7 +8,7 @@ import { storage } from "./utlis/cloudinary.js";
 import productRoutes from "./routes/productRoutes.js";
 import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
-import testimonialRoutes from "./routes/testimonialRoutes.js";
+import testimonialRoutes from "./routes/testimonials.js";
 
 dotenv.config();
 
@@ -21,6 +21,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.json({ limit: "10mb" }));
 app.use(express.json());
 
 // Static uploads
@@ -28,18 +29,16 @@ app.use('/uploads', express.static('uploads'));
 
 // Routes
 app.use("/api/products", productRoutes);
-app.use("/api/subscriptions", subscriptionRoutes); 
 
+app.use("/api/subscriptions", subscriptionRoutes);
 
 app.use("/api/contacts", contactRoutes);
 
 app.use("/api/testimonials", testimonialRoutes);
 
-app.use(express.json({ limit: "10mb" }));
-
 const upload = multer({ storage });
 
-// ✅ BLOG Routes
+// BLOG Routes
 app.post("/api/blogs", upload.single("image"), async (req, res) => {
   try {
     const { title, content, author } = req.body;
@@ -107,7 +106,6 @@ app.delete("/api/blogs/:id", async (req, res) => {
   }
 });
 
-// ✅ Start server after all setup
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected");

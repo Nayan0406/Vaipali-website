@@ -3,9 +3,10 @@ import Testimonial from "../models/Testimonial.js";
 
 const router = express.Router();
 
-router.post("/add", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const newTestimonial = new Testimonial(req.body);
+    const { name, owner, rating, description, image } = req.body;
+    const newTestimonial = new Testimonial({ name, owner, rating, description });
     await newTestimonial.save();
     res.status(201).json({ message: "Testimonial added successfully" });
   } catch (err) {
