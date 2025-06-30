@@ -1,5 +1,6 @@
 import express from "express";
 import Subscription from "../models/Subscription.js";
+
 const router = express.Router();
 
 // POST /api/subscriptions - Create
@@ -25,4 +26,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
