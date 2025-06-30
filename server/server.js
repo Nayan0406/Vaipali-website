@@ -37,6 +37,10 @@ app.use('/uploads', express.static('uploads'));
 
 app.use("/api/products", productRoutes);
 
+const subscriptionRoutes = require("./routes/subscriptions");
+
+app.use("/api/subscriptions", subscriptionRoutes);
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
