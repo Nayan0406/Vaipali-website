@@ -34,7 +34,7 @@ const AddTestimonial = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto p-4">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto p-4 bg-gray-800">
       <input name="name" value={form.name} onChange={handleChange} placeholder="Client Name" className="w-full p-2 border" />
       <input name="owner" value={form.owner} onChange={handleChange} placeholder="Owner of (company/project)" className="w-full p-2 border" />
       <input name="rating" type="number" value={form.rating} onChange={handleChange} placeholder="Rating (1-5)" className="w-full p-2 border" min="1" max="5" />
