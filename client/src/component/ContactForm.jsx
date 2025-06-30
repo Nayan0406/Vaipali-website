@@ -100,6 +100,7 @@ const ContactForm = () => {
                     <input
                       type="text"
                       name="firstName"
+                      id="firstname"
                       placeholder="First Name"
                       value={formData.firstName}
                       onChange={handleInputChange}
@@ -110,6 +111,7 @@ const ContactForm = () => {
                     <input
                       type="text"
                       name="lastName"
+                      id='lastname'
                       placeholder="Last Name"
                       value={formData.lastName}
                       onChange={handleInputChange}
@@ -123,6 +125,7 @@ const ContactForm = () => {
                   <input
                     type="email"
                     name="email"
+                    id='email'
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleInputChange}
@@ -135,6 +138,7 @@ const ContactForm = () => {
                   <input
                     type="tel"
                     name="phone"
+                    id='phone'
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleInputChange}
@@ -146,6 +150,7 @@ const ContactForm = () => {
                 <div className='mr-7'>
                   <textarea
                     name="message"
+                    id='message'
                     placeholder="Message"
                     rows="5"
                     value={formData.message}
