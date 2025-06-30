@@ -12,7 +12,7 @@ const ContactForm = () => {
 
   return (
     <div className="p-4 text-white">
-      <h2 className="text-xl font-bold mb-4">Contact Messages</h2>
+      <h2 className="text-xl font-bold mb-4 flex justify-center">Contact Messages</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-neutral-800 text-left border border-gray-600 text-sm">
           <thead>

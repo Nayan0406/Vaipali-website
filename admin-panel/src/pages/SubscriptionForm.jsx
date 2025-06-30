@@ -19,7 +19,7 @@ const SubscriptionsForm = () => {
 
   return (
     <div className="p-4 sm:p-6 text-white">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center sm:text-left">All Subscriptions</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center sm:text-left flex justify-center">All Subscriptions</h2>
 
       {/* Responsive Table Wrapper */}
       <div className="overflow-x-auto">
