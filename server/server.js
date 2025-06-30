@@ -7,6 +7,7 @@ import Blog from "./models/Blog.js";
 import { storage } from "./utlis/cloudinary.js";
 import productRoutes from "./routes/productRoutes.js";
 import subscriptionRoutes from "./routes/subscriptionRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
 
@@ -27,6 +28,10 @@ app.use('/uploads', express.static('uploads'));
 // Routes
 app.use("/api/products", productRoutes);
 app.use("/api/subscriptions", subscriptionRoutes); 
+
+
+app.use("/api/contacts", contactRoutes);
+
 
 const upload = multer({ storage });
 
