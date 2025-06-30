@@ -21,7 +21,7 @@ const SubscriptionSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f11] text-white flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
+    <div className="min-h-screen text-white flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
       <div className="w-full max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 

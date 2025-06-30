@@ -1,7 +1,7 @@
 import React from "react";
 
 const AboutSection = () => (
-  <div className="min-h-screen bg-[#0f0f11] text-white font-sans px-4 py-12 flex flex-col">
+  <div className="min-h-screen text-white font-sans px-4 py-12 flex flex-col">
     {/* Heading */}
     <div className="mt-7">
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 text-center md:text-left md:ml-24">

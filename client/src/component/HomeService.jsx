@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeService = () => {
   return (
-    <div className="bg-[#0f0f11] text-white font-sans">
+    <div className="text-white font-sans">
       <div className="px-4 sm:px-6 lg:px-16 py-12 max-w-7xl mx-auto">
 
         {/* Header */}

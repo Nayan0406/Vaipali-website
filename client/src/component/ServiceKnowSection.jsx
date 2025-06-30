@@ -21,7 +21,7 @@ const KnowMoreSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b bg-[#0f0f11] text-white">
+    <div className="min-h-screen bg-gradient-to-b text-white">
       {/* Hero Section */}
       <div className="pt-16 pb-20 px-4">
         <div className="max-w-4xl mx-auto text-center space-y-6">

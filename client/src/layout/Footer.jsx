@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0f0f11] text-white px-4 sm:px-6 md:px-20 py-8 md:py-12">
+    <footer className="text-white px-4 sm:px-6 md:px-20 py-8 md:py-12">
       {/* Logo Section - Mobile Centered */}
       <div className="flex items-center justify-center lg:justify-start mb-8 md:mb-10">
         <img src="/logo.png" alt="Vaipali Logo" className="h-6 mr-2" />

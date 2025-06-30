@@ -53,7 +53,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0f0f11] text-white px-4 py-16 sm:px-6 lg:px-12">
+    <div className="min-h-screen text-white px-4 py-16 sm:px-6 lg:px-12">
       {/* Header Section */}
       <div className="text-center mb-12 lg:mb-20 px-2">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6">

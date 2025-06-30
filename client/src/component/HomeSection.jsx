@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeSection = () => {
   return (
-    <section className=" text-white py-16 px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen">
+    <section className="text-white py-16 px-4 sm:px-8 md:px-12 lg:px-24 min-h-screen">
       {/* Headline */}
       <div className="text-center mb-16">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">

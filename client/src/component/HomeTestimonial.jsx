@@ -20,7 +20,7 @@ const testimonials = [
 
 const HomeTestimonial = () => {
   return (
-    <div className=" bg-[#0f0f11] text-white px-4 py-12 sm:px-6 lg:px-16 font-sans">
+    <div className="text-white px-4 py-12 sm:px-6 lg:px-16 font-sans">
 
       {/* Heading */}
       <div className="text-center mb-12">

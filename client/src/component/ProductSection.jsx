@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductSection = () => {
     return (
-        <section className="bg-[#0f0f11] px-6 py-12 md:py-20">
+        <section className="px-6 py-12 md:py-20">
             <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-10">
                 {/* Text Content */}
                 <div className="md:w-1/2 text-left">

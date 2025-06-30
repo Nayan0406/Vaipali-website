@@ -79,7 +79,7 @@ const BlogCards = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0f0f11] text-white py-12 px-4">
+    <div className="min-h-screen text-white py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
