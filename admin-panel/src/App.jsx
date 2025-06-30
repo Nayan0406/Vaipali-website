@@ -8,6 +8,7 @@ import AddProduct from './pages/AddProduct';
 import Navbar from './layout/Navbar';
 import SubscriptionsForm from './pages/SubscriptionForm';
 import ContactForm from './pages/ContactForm';
+import AddTestimonial from './pages/AddTestimonial';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/admin/add-product' element={<AddProduct />}/>
         <Route path='/admin/subscription-form' element={<SubscriptionsForm />}/>
         <Route path='/admin/contact-form' element={<ContactForm />}/>
+        <Route path='/admin/add-testimonial' element={<AddTestimonial />}/>
       </Routes>
 
       <ToastContainer position="top-right" autoClose={3000} />
