@@ -6,13 +6,12 @@ import multer from "multer";
 import Blog from "./models/Blog.js";
 import { storage } from "./utlis/cloudinary.js";
 import productRoutes from "./routes/productRoutes.js";
-import subscriptionRoutes from "./routes/subscriptions.js"; // ✅ fixed ES module import
+import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 
 dotenv.config();
 
 const app = express();
 
-// ✅ Proper CORS configuration
 const corsOptions = {
   origin: ["https://vaipali-website-frontend.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -27,7 +26,7 @@ app.use('/uploads', express.static('uploads'));
 
 // Routes
 app.use("/api/products", productRoutes);
-app.use("/api/subscriptions", subscriptionRoutes); // ✅ moved up
+app.use("/api/subscriptions", subscriptionRoutes); 
 
 const upload = multer({ storage });
 
