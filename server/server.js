@@ -23,7 +23,7 @@ app.use(cors({
 }));
 
 const corsOptions = {
-  origin: ["https://your-frontend.vercel.app"], 
+  origin: ["https://vaipali-website-frontend.vercel.app"], 
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 };
