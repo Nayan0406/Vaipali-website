@@ -158,7 +158,7 @@ const ContactForm = () => {
                 <div className='pb-4 pr-7 '>
                   <button
                     type="submit"
-                    className="w-full px-3 py-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-semibold rounded-lg hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+                    className="w-full px-3 py-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-semibold rounded-lg hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 cursor-pointer"
                   >
                     <span>Send it to the</span>
                     <img src="/logo.png" alt="" />
