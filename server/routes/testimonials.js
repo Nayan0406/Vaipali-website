@@ -1,26 +1,16 @@
-import express from "express";
-import Testimonial from "../models/Testimonial.js";
-
+import express from 'express'
 const router = express.Router();
 
-router.post("/", async (req, res) => {
-  try {
-    const { name, owner, rating, description, image } = req.body;
-    const newTestimonial = new Testimonial({ name, owner, rating, description });
-    await newTestimonial.save();
-    res.status(201).json({ message: "Testimonial added successfully" });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+router.post("/", (req, res) => {
+  const { name, owner, rating, description, image } = req.body;
+  console.log("ttriger")
 
-router.get("/", async (req, res) => {
-  try {
-    const testimonials = await Testimonial.find();
-    res.json(testimonials);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+  if (!name || !owner || !rating || !description || !image) {
+    return res.status(400).json({ message: "All fields are required" });
   }
+
+  console.log("✅ Testimonial received:", req.body);
+  res.status(200).json({ message: "Testimonial added successfully" });
 });
 
 export default router;
