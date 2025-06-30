@@ -25,9 +25,10 @@ const AddTestimonial = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://vaipali-website-backend.vercel.app/api/testimonials", formData);
+      const res = await axios.post("http://localhost:8000/api/testimonials", formData);
+      console.log(res)
       alert("Client testimonial added!");
-      setForm({ name: "", owner: "", rating: "", description: "", image: "" });
+      setFormData({ name: "", owner: "", rating: "", description: "", image: "" });
     } catch (err) {
       alert("Error adding testimonial");
     }
