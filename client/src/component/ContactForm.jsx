@@ -120,7 +120,7 @@ const ContactForm = () => {
                     />
                   </div>
                 </div>
-
+                <br/>
                 {/* Email */}
                 <div className='mr-7'>
                   <input
@@ -133,7 +133,7 @@ const ContactForm = () => {
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400"
                   />
                 </div>
-
+                <br/>
                 {/* Phone */}
                 <div className='mr-7'>
                   <input
@@ -146,7 +146,7 @@ const ContactForm = () => {
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400"
                   />
                 </div>
-
+                <br/>
                 {/* Message */}
                 <div className='mr-7'>
                   <textarea
@@ -159,7 +159,7 @@ const ContactForm = () => {
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400 resize-none"
                   ></textarea>
                 </div>
-
+                <br/>
                 {/* Submit Button */}
                 <div className='pb-4 pr-7 '>
                   <button
