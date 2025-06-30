@@ -94,6 +94,7 @@ const ContactForm = () => {
               </div>
 
               <div className="space-y-6">
+                <form onSubmit={handleSubmit}>
                 {/* Name Fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mr-7">
                   <div>
@@ -170,6 +171,7 @@ const ContactForm = () => {
                     <span>Vaipali</span>
                   </button>
                 </div>
+                </form>
               </div>
             </div>
           </div>
