@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
     const { firstName, lastName, email, phone, message } = req.body;
     const contact = new Contact({ firstName, lastName, email, phone, message});
     await contact.save();
-    res.status(201).json({ message: "Contact message saved", contact });
+    res.status(201).json({ message: "Contact message saved", contact : contact });
   } catch (error) {
     res.status(500).json({ message: "Error saving contact", error });
   }
