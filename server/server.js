@@ -4,50 +4,34 @@ import cors from "cors";
 import dotenv from "dotenv";
 import multer from "multer";
 import Blog from "./models/Blog.js";
-import { storage } from "./utlis/cloudinary.js"; 
+import { storage } from "./utlis/cloudinary.js";
 import productRoutes from "./routes/productRoutes.js";
+import subscriptionRoutes from "./routes/subscriptions.js"; // ✅ fixed ES module import
 
 dotenv.config();
+
 const app = express();
-app.use(cors());
 
-app.use(express.json());
-
-app.listen(process.env.PORT, () => {
-    console.log(`Server running on port ${process.env.PORT}`);
-});
-
-app.use(cors({
-    methods: ["GET", "POST", "DELETE", "PUT"],
-    credentials: true,
-}));
-
+// ✅ Proper CORS configuration
 const corsOptions = {
-  origin: ["https://vaipali-website-frontend.vercel.app"], 
+  origin: ["https://vaipali-website-frontend.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 };
 
 app.use(cors(corsOptions));
+app.use(express.json());
 
-// app.use("/api/blogs", blogRoutes);
-
+// Static uploads
 app.use('/uploads', express.static('uploads'));
 
+// Routes
 app.use("/api/products", productRoutes);
-
-const subscriptionRoutes = require("./routes/subscriptions");
-
-app.use("/api/subscriptions", subscriptionRoutes);
-
-
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error("MongoDB error:", err));
+app.use("/api/subscriptions", subscriptionRoutes); // ✅ moved up
 
 const upload = multer({ storage });
 
-// Route to upload blog
+// ✅ BLOG Routes
 app.post("/api/blogs", upload.single("image"), async (req, res) => {
   try {
     const { title, content } = req.body;
@@ -60,7 +44,6 @@ app.post("/api/blogs", upload.single("image"), async (req, res) => {
     });
 
     await newBlog.save();
-
     res.status(201).json({ message: "Blog created successfully!", blog: newBlog });
   } catch (error) {
     console.error("Error uploading blog:", error);
@@ -68,13 +51,11 @@ app.post("/api/blogs", upload.single("image"), async (req, res) => {
   }
 });
 
-//Get the blog
 app.get("/api/blogs", async (req, res) => {
   try {
-    const blogs = await Blog.find();
+    const blogs = await Blog.find().sort({ createdAt: -1 });
     res.json({ blogs });
   } catch (error) {
-    console.error("API /blogs error:", error);
     res.status(500).json({ message: "Something went wrong", error: error.message });
   }
 });
@@ -86,21 +67,19 @@ app.get("/api/blogs/:id", async (req, res) => {
     res.json({ blog });
   } catch (err) {
     res.status(500).json({ message: "Error fetching blog" });
-  }   
-})
+  }
+});
 
-// PUT: Update blog
 app.put("/api/blogs/:id", upload.single("image"), async (req, res) => {
   try {
     const { title, content } = req.body;
     const updateData = { title, content };
 
     if (req.file) {
-      updateData.image = req.file.path; 
+      updateData.image = req.file.path;
     }
 
     const blog = await Blog.findByIdAndUpdate(req.params.id, updateData, { new: true });
-
     if (!blog) return res.status(404).json({ message: "Blog not found" });
 
     res.json({ message: "Blog updated successfully", blog });
@@ -109,7 +88,6 @@ app.put("/api/blogs/:id", upload.single("image"), async (req, res) => {
   }
 });
 
-// DELETE: Remove blog
 app.delete("/api/blogs/:id", async (req, res) => {
   try {
     const blog = await Blog.findByIdAndDelete(req.params.id);
@@ -120,14 +98,12 @@ app.delete("/api/blogs/:id", async (req, res) => {
   }
 });
 
-
-//product route
-// app.get('/api/products', async (req, res) => {
-//   try {
-//     const products = await Product.find();
-//     res.json(products);
-//   } catch (err) {
-//     res.status(500).json({ error: 'Server Error' });
-//   }
-// });
-
+// ✅ Start server after all setup
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected");
+    app.listen(process.env.PORT, () => {
+      console.log(`Server running on port ${process.env.PORT}`);
+    });
+  })
+  .catch(err => console.error("MongoDB connection error:", err));
