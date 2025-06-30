@@ -33,12 +33,13 @@ const upload = multer({ storage });
 // ✅ BLOG Routes
 app.post("/api/blogs", upload.single("image"), async (req, res) => {
   try {
-    const { title, content } = req.body;
+    const { title, content, author } = req.body;
     const imageUrl = req.file?.path;
 
     const newBlog = new Blog({
       title,
       content,
+      author,
       image: imageUrl,
     });
 
