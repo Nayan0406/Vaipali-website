@@ -40,6 +40,16 @@ const Navbar = () => {
           >
             Subscription Form
           </NavLink>
+          <NavLink
+            to="/admin/contact-form"
+            className={({ isActive }) =>
+              `hover:text-blue-400 transition ${
+                isActive ? "text-blue-500 font-semibold" : ""
+              }`
+            }
+          >
+            Contact Form
+          </NavLink>
         </div>
       </div>
     </nav>
