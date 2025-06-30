@@ -128,7 +128,7 @@ const SubscriptionSection = () => {
                   disabled={isSubmitting}
                   className={`${
                     isSubmitting ? "opacity-50 cursor-not-allowed" : "hover:bg-purple-700"
-                  } bg-purple-600 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900`}
+                  } bg-purple-600 text-white font-medium py-3 px-8 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 cursor-pointer`}
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
