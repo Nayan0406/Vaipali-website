@@ -35,6 +35,7 @@ app.use("/api/contacts", contactRoutes);
 
 app.use("/api/testimonials", testimonialRoutes);
 
+app.use(express.json({ limit: "10mb" }));
 
 const upload = multer({ storage });
 
