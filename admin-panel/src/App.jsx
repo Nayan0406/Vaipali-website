@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddProduct from './pages/AddProduct';
 import Navbar from './layout/Navbar';
+import SubscriptionsForm from './pages/SubscriptionForm';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<AddBlog />} />
         <Route path='/admin/add-product' element={<AddProduct />}/>
+        <Route path='/admin/subscription-form' element={<SubscriptionsForm />}/>
       </Routes>
 
       <ToastContainer position="top-right" autoClose={3000} />

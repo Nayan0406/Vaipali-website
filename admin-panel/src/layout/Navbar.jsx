@@ -30,6 +30,16 @@ const Navbar = () => {
           >
             Add Product
           </NavLink>
+          <NavLink
+            to="/admin/subscription-form"
+            className={({ isActive }) =>
+              `hover:text-blue-400 transition ${
+                isActive ? "text-blue-500 font-semibold" : ""
+              }`
+            }
+          >
+            Subscription Form
+          </NavLink>
         </div>
       </div>
     </nav>
