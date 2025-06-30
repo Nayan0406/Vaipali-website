@@ -18,28 +18,40 @@ const SubscriptionsForm = () => {
   }, []);
 
   return (
-    <div className="p-6 text-white">
-      <h2 className="text-2xl font-bold mb-4">All Subscriptions</h2>
-      <table className="min-w-full bg-neutral-800 text-left border border-gray-600">
-        <thead>
-          <tr className="bg-neutral-700 text-white">
-            <th className="py-2 px-4 border-b">First Name</th>
-            <th className="py-2 px-4 border-b">Last Name</th>
-            <th className="py-2 px-4 border-b">Email</th>
-            <th className="py-2 px-4 border-b">Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {subscriptions.map((sub) => (
-            <tr key={sub._id} className="border-b border-gray-700">
-              <td className="py-2 px-4">{sub.firstName}</td>
-              <td className="py-2 px-4">{sub.lastName}</td>
-              <td className="py-2 px-4">{sub.email}</td>
-              <td className="py-2 px-4">{new Date(sub.createdAt).toLocaleString()}</td>
+    <div className="p-4 sm:p-6 text-white">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center sm:text-left">All Subscriptions</h2>
+
+      {/* Responsive Table Wrapper */}
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-neutral-800 text-left border border-gray-600 text-sm sm:text-base">
+          <thead>
+            <tr className="bg-neutral-700 text-white">
+              <th className="py-2 px-4 border-b whitespace-nowrap">First Name</th>
+              <th className="py-2 px-4 border-b whitespace-nowrap">Last Name</th>
+              <th className="py-2 px-4 border-b whitespace-nowrap">Email</th>
+              <th className="py-2 px-4 border-b whitespace-nowrap">Date</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {subscriptions.length === 0 ? (
+              <tr>
+                <td colSpan="4" className="text-center py-4 text-gray-400">
+                  No subscriptions found.
+                </td>
+              </tr>
+            ) : (
+              subscriptions.map((sub) => (
+                <tr key={sub._id} className="border-b border-gray-700 hover:bg-neutral-700 transition">
+                  <td className="py-2 px-4 whitespace-nowrap">{sub.firstName}</td>
+                  <td className="py-2 px-4 whitespace-nowrap">{sub.lastName}</td>
+                  <td className="py-2 px-4 whitespace-nowrap break-all">{sub.email}</td>
+                  <td className="py-2 px-4 whitespace-nowrap">{new Date(sub.createdAt).toLocaleString()}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
