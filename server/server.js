@@ -24,7 +24,7 @@ app.use(cors({
 }));
 
 const corsOptions = {
-  origin: ["https://your-frontend.vercel.app"], // or "*" for development
+  origin: ["https://your-frontend.vercel.app"], 
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 };
