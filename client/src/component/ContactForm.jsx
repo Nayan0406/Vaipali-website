@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -17,10 +18,40 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+
+    const { firstName, lastName, email, phone, message } = formData;
+
+    if (!firstName || !lastName || !email || !phone || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (phone.length < 10 || !/^\d+$/.test(phone)) {
+      alert("Please enter a valid phone number (at least 10 digits).");
+      return;
+    }
+
+    try {
+      const res = await axios.post("https://vaipali-website-backend.vercel.app/api/contacts", formData);
+      console.log("Form submitted:", res.data);
+      alert("Message sent successfully!");
+      setFormData({ firstName: '', lastName: '', email: '', phone: '', message: '' });
+    } catch (err) {
+      console.error("Submission error:", err);
+      alert("Something went wrong!");
+    }
   };
+
+
 
   return (
     <div className="min-h-screen text-white py-12 px-4">
