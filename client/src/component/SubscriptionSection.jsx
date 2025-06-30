@@ -15,10 +15,18 @@ const SubscriptionSection = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+  const handleSubmit = async () => {
+    try {
+      const res = await axios.post("https://vaipali-website-backend.vercel.app/api/subscriptions", formData); 
+      console.log("Submitted successfully:", res.data);
+      alert("Subscribed successfully!");
+      setFormData({ firstName: "", lastName: "", email: "" });
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Something went wrong!");
+    }
   };
+
 
   return (
     <div className="min-h-screen text-white flex items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
