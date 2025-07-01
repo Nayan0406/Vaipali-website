@@ -9,10 +9,12 @@ import productRoutes from "./routes/productRoutes.js";
 import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import testimonialRoutes from "./routes/testimonials.js";
+import authRoutes from "./routes/auth.js";
 
 dotenv.config();
 
 const app = express();
+
 
 const corsOptions = {
   origin: ["https://vaipali-website-frontend.vercel.app","http://localhost:5173", "http://localhost:5174"],
@@ -35,6 +37,8 @@ app.use("/api/subscriptions", subscriptionRoutes);
 app.use("/api/contacts", contactRoutes);
 
 app.use("/api/testimonials", testimonialRoutes);
+
+app.use("/api/auth", authRoutes);
 
 const upload = multer({ storage });
 
