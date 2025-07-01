@@ -1,6 +1,6 @@
 import express from 'express'
 import Testimonial from "../models/Testimonial.js";
-import { getAllTestimonials, addTestimonial } from "../controller/testimonialController.js";
+
 const router = express.Router();
 
 router.post("/", async (req, res) => {
@@ -16,20 +16,16 @@ router.post("/", async (req, res) => {
     console.error("❌ Error saving testimonial:", error);
     res.status(500).json({ message: "Server error" });
   }
+});
 
-
-  router.get("/", async (req, res) => {
-    try {
-      const testimonials = await Testimonial.find();
-      res.status(200).json(testimonials);
-    } catch (error) {
-      res.status(500).json({ message: "Failed to fetch testimonials" });
-    }
-  });
-
-
-  router.get("/", getAllTestimonials); 
-router.post("/add", addTestimonial);
+// Move these out of the post handler!
+router.get("/", async (req, res) => {
+  try {
+    const testimonials = await Testimonial.find();
+    res.status(200).json(testimonials);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to fetch testimonials" });
+  }
 });
 
 export default router;
