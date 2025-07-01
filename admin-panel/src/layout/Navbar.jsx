@@ -41,11 +41,11 @@ const Navbar = () => {
         <div className="hidden md:flex gap-6">
           {/* <NavLink to="/" className={navLinkClass} onClick={toggleMenu}>Register</NavLink> */}
           {/* <NavLink to="/home" className={navLinkClass}>Home</NavLink> */}
-          <NavLink to="/add-blog" className={navLinkClass}>Add Blog</NavLink>
-          <NavLink to="/add-product" className={navLinkClass}>Add Product</NavLink>
-          <NavLink to="/subscription-form" className={navLinkClass}>Subscription Form</NavLink>
-          <NavLink to="/contact-form" className={navLinkClass}>Contact Form</NavLink>
-          <NavLink to="/add-testimonial" className={navLinkClass} onClick={toggleMenu}>Client Testimonial</NavLink>
+          <NavLink to="/add-blog" className={navLinkClass} onClick={toggleMenu}>Add Blog</NavLink>
+          <NavLink to="/admin/add-product" className={navLinkClass} onClick={toggleMenu}>Add Product</NavLink>
+          <NavLink to="/admin/subscription-form" className={navLinkClass} onClick={toggleMenu}>Subscription Form</NavLink>
+          <NavLink to="/admin/contact-form" className={navLinkClass} onClick={toggleMenu}>Contact Form</NavLink>
+          <NavLink to="/admin/add-testimonial" className={navLinkClass} onClick={toggleMenu}>Client Testimonial</NavLink>
           <button
             onClick={handleLogout}
             className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition cursor-pointer"
