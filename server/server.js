@@ -10,6 +10,7 @@ import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import testimonialRoutes from "./routes/testimonials.js";
 import authRoutes from "./routes/auth.js";
+import { getAllTestimonials } from "./controller/testimonialController.js";
 
 dotenv.config();
 
@@ -39,6 +40,8 @@ app.use("/api/contacts", contactRoutes);
 app.use("/api/testimonials", testimonialRoutes);
 
 app.use("/api/auth", authRoutes);
+
+router.get("/", testimonialController.getAllTestimonials); 
 
 const upload = multer({ storage });
 
