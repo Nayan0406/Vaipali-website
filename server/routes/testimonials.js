@@ -1,5 +1,6 @@
 import express from 'express'
 import Testimonial from "../models/Testimonial.js";
+import { getAllTestimonials, addTestimonial } from "../controller/testimonialController.js";
 const router = express.Router();
 
 router.post("/", async (req, res) => {
@@ -27,6 +28,8 @@ router.post("/", async (req, res) => {
   });
 
 
+  router.get("/", getAllTestimonials); 
+router.post("/add", addTestimonial);
 });
 
 export default router;
