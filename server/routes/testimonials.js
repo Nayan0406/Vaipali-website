@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
   }
 
 
-  router.get("/testimonials", async (req, res) => {
+  router.get("/", async (req, res) => {
     try {
       const testimonials = await Testimonial.find();
       res.status(200).json(testimonials);
