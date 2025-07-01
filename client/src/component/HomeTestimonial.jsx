@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import { Carousel, IconButton } from "@material-tailwind/react";
 
-export function CarouselCustomArrows() {
+export function HomeTestimonial() {
   const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -12,6 +13,8 @@ export function CarouselCustomArrows() {
         setTestimonials(res.data);
       } catch (error) {
         console.error("Error fetching testimonials", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -19,75 +22,53 @@ export function CarouselCustomArrows() {
   }, []);
 
   return (
-    <Carousel
-      className="rounded-xl"
-      prevArrow={({ handlePrev }) => (
-        <IconButton
-          variant="text"
-          color="white"
-          size="lg"
-          onClick={handlePrev}
-          className="!absolute top-2/4 left-4 -translate-y-2/4"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
+    <div className="text-center mb-10 mt-10 px-4">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+        What Our Clients Are<br />Saying
+      </h1>
+
+      <div className="flex flex-col items-center justify-center mt-10 space-y-10">
+        {loading ? (
+          <div className="text-white text-lg">Loading testimonials...</div>
+        ) : (
+          <div
+            className="carousel carousel-end rounded-box p-4 space-x-4 overflow-x-auto w-full max-w-6xl scroll-smooth snap-x snap-mandatory"
+            ref={scrollRef}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-        </IconButton>
-      )}
-      nextArrow={({ handleNext }) => (
-        <IconButton
-          variant="text"
-          color="white"
-          size="lg"
-          onClick={handleNext}
-          className="!absolute top-2/4 right-4 -translate-y-2/4"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-            />
-          </svg>
-        </IconButton>
-      )}
-    >
-      {testimonials.map((t, i) => (
-        <div
-          key={i}
-          className="flex flex-col items-center justify-center text-center p-8 bg-gray-900 text-white h-[400px]"
-        >
-          {t.image && (
-            <img
-              src={t.image}
-              alt={t.name}
-              className="w-24 h-24 object-cover rounded-full border-2 border-white mb-4"
-            />
-          )}
-          <h3 className="text-xl font-bold">{t.name}</h3>
-          <p className="text-sm text-gray-400 mb-1">{t.owner}</p>
-          <p className="text-yellow-400 font-medium">⭐ {t.rating}</p>
-          <p className="mt-4 text-gray-300 max-w-xl">{t.description}</p>
-        </div>
-      ))}
-    </Carousel>
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="carousel-item snap-start min-w-[250px] max-w-xs bg-gray-800 text-white p-4 rounded-lg flex flex-col items-start text-left space-y-3 border border-gray-600"
+              >
+                {/* 1. Image */}
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="rounded-full object-cover h-24 w-24 border border-white mb-2"
+                />
+
+                {/* 2. Rating */}
+                <div className="text-yellow-400">
+                  {Array.from({ length: parseInt(t.rating) }, (_, index) => (
+                    <span key={index}>⭐</span>
+                  ))}
+                </div>
+
+                {/* 3. Description */}
+                <p className="text-sm text-gray-300">{t.description}</p>
+
+                {/* 4. Name & Owner */}
+                <div className="mt-2">
+                  <h3 className="text-md font-semibold">{t.name}</h3>
+                  <p className="text-sm text-gray-400">{t.owner}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
+
+export default HomeTestimonial;

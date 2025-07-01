@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 /* Hide scrollbar but keep scroll working */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
