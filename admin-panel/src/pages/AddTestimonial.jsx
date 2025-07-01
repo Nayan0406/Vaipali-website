@@ -11,7 +11,7 @@ const AddTestimonial = () => {
   });
 
   const [imagePreview, setImagePreview] = useState(null);
-  const [testimonials, setTestimonials] = useState([]); // New: local testimonials list
+  const [testimonials, setTestimonials] = useState([]);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -31,7 +31,7 @@ const AddTestimonial = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://vaipali-website-backend.vercel.app/api/testimonials", formData);
+      const res = await axios.post("http://localhost:8000/api/testimonials", formData);
       console.log(res.data);
       alert("Client testimonial added!");
 

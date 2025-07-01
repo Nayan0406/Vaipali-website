@@ -1,15 +1,31 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+  const navigate = useNavigate();
+
+  const { logout, isAuthenticated } = useAuth();
+
+  
+
+  if (!isAuthenticated) return null;
+
+  const handleLogout = () => {
+    logout(); 
+    toast.success("Logged out successfully");
+    navigate("/login");
+  };
+
   const navLinkClass = ({ isActive }) =>
-    `block px-3 py-2 rounded-md hover:text-blue-400 transition ${
-      isActive ? "text-blue-500 font-semibold" : ""
+    `block px-3 py-2 rounded-md hover:text-blue-400 transition ${isActive ? "text-blue-500 font-semibold" : ""
     }`;
 
   return (
@@ -20,11 +36,19 @@ const Navbar = () => {
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex gap-6">
-          <NavLink to="/" className={navLinkClass}>Add Blog</NavLink>
-          <NavLink to="/admin/add-product" className={navLinkClass}>Add Product</NavLink>
-          <NavLink to="/admin/subscription-form" className={navLinkClass}>Subscription Form</NavLink>
-          <NavLink to="/admin/contact-form" className={navLinkClass}>Contact Form</NavLink>
-          <NavLink to="/admin/add-testimonial" className={navLinkClass} onClick={toggleMenu}>Client Testimonial</NavLink>
+          {/* <NavLink to="/" className={navLinkClass} onClick={toggleMenu}>Register</NavLink> */}
+          {/* <NavLink to="/home" className={navLinkClass}>Home</NavLink> */}
+          <NavLink to="/add-blog" className={navLinkClass}>Add Blog</NavLink>
+          <NavLink to="/add-product" className={navLinkClass}>Add Product</NavLink>
+          <NavLink to="/subscription-form" className={navLinkClass}>Subscription Form</NavLink>
+          <NavLink to="/contact-form" className={navLinkClass}>Contact Form</NavLink>
+          <NavLink to="/add-testimonial" className={navLinkClass} onClick={toggleMenu}>Client Testimonial</NavLink>
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition cursor-pointer"
+          >
+            Logout
+          </button>
         </div>
 
         {/* Mobile Toggle Button */}
@@ -38,11 +62,19 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-6 pb-4 space-y-2">
-          <NavLink to="/" className={navLinkClass} onClick={toggleMenu}>Add Blog</NavLink>
+          <NavLink to="/" className={navLinkClass} onClick={toggleMenu}>Register</NavLink>
+          <NavLink to="/add-blog" className={navLinkClass} onClick={toggleMenu}>Add Blog</NavLink>
           <NavLink to="/admin/add-product" className={navLinkClass} onClick={toggleMenu}>Add Product</NavLink>
           <NavLink to="/admin/subscription-form" className={navLinkClass} onClick={toggleMenu}>Subscription Form</NavLink>
           <NavLink to="/admin/contact-form" className={navLinkClass} onClick={toggleMenu}>Contact Form</NavLink>
           <NavLink to="/admin/add-testimonial" className={navLinkClass} onClick={toggleMenu}>Client Testimonial</NavLink>
+
+          <button
+            onClick={handleLogout}
+            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition cursor-pointer"
+          >
+            Logout
+          </button>
         </div>
       )}
     </nav>
