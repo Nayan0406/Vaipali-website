@@ -15,7 +15,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: ["https://vaipali-website-frontend.vercel.app","http://localhost:5173"],
+  origin: ["https://vaipali-website-frontend.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 };
