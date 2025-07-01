@@ -14,14 +14,17 @@ const Navbar = () => {
 
   const { logout, isAuthenticated } = useAuth();
 
-  
+
 
   if (!isAuthenticated) return null;
 
   const handleLogout = () => {
-    logout(); 
+    logout();
     toast.success("Logged out successfully");
-    navigate("/login");
+
+    setTimeout(() => {
+      navigate("/login");
+    }, 500); 
   };
 
   const navLinkClass = ({ isActive }) =>
@@ -62,7 +65,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-6 pb-4 space-y-2">
-          <NavLink to="/" className={navLinkClass} onClick={toggleMenu}>Register</NavLink>
+          {/* <NavLink to="/" className={navLinkClass} onClick={toggleMenu}>Register</NavLink> */}
           <NavLink to="/add-blog" className={navLinkClass} onClick={toggleMenu}>Add Blog</NavLink>
           <NavLink to="/admin/add-product" className={navLinkClass} onClick={toggleMenu}>Add Product</NavLink>
           <NavLink to="/admin/subscription-form" className={navLinkClass} onClick={toggleMenu}>Subscription Form</NavLink>
