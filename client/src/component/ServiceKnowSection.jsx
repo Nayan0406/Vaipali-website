@@ -23,7 +23,7 @@ const KnowMoreSection = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b text-white">
       {/* Hero Section */}
-      <div className="pt-16 pb-20 px-4">
+      <div className=" pb-20 px-4">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
             Know more about

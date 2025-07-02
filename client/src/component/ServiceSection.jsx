@@ -12,7 +12,7 @@ const ServiceSection = () => {
 
       {/* Top Quote */}
       <div className="flex flex-col md:flex-row justify-center md:justify-end text-center w-full">
-        <div className="md:w-1/2 text-gray-200 text-sm md:text-base text-center md:pr-32 mb-7">
+        <div className="md:w-1/2 text-gray-200 text-sm md:text-base text-center md:pr-32 mb-10">
           <span>
             “Vaipali is a seasoned IT solutions provider, <br />
             transforming ideas into impactful digital<br />
@@ -36,7 +36,7 @@ const ServiceSection = () => {
 
         {/* Box */}
         <div className="flex justify-center w-full">
-          <img src="/rectangle-box.png" alt="Service Visual" className="w-full max-w-sm" />
+          <img src="/rectangle-box.png" alt="Service Visual" className="w-full max-w-3xl" />
         </div>
       </div>
     </div>
