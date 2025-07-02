@@ -13,9 +13,14 @@ const HomeSection = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 items-start gap-12">
         {/* Left Column */}
-        <div className="space-y-6 flex flex-col justify-between">
+        <div className="space-y-6 flex flex-col justify-between items-center lg:items-start text-center lg:text-left">
           <p className="text-gray-300 text-sm sm:text-base max-w-md">
-            Our team of seasoned professionals, with <br />over 18 years of experience across the <br />UK, Australia, and India, collaborates <br />closely with clients to develop customized <br />software that aligns with their unique <br />business goals.
+            Our team of seasoned professionals, with <br />
+            over 18 years of experience across the <br />
+            UK, Australia, and India, collaborates <br />
+            closely with clients to develop customized <br />
+            software that aligns with their unique <br />
+            business goals.
           </p>
 
           <button className="bg-gradient-to-r from-[#aa8fff] to-[#ffb4ab] text-white px-6 py-2 rounded-md text-sm w-fit">
@@ -24,15 +29,18 @@ const HomeSection = () => {
 
           {/* Quote Box */}
           <div className="bg-[#1a1a1f] p-4 text-sm max-w-xs rounded">
-            <p className="italic text-gray-300 ">"YOUR VISION,<br />OUR CODE."</p>
+            <p className="italic text-gray-300">
+              "YOUR VISION,<br />OUR CODE."
+            </p>
             <p className="text-xs text-gray-400 mt-4">Follow us on :</p>
-            <div className="flex gap-4 mt-3">
+            <div className="flex gap-4 mt-3 justify-center lg:justify-start">
               <img src="/Instagram.png" alt="Instagram" className="h-8 w-8" />
               <img src="/Dribble.png" alt="Dribbble" className="h-8 w-8" />
               <img src="/Behance.png" alt="Behance" className="h-8 w-8" />
             </div>
           </div>
         </div>
+
 
         {/* Middle Column - Cube */}
         <div className="flex justify-center">

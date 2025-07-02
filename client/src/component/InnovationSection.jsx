@@ -9,7 +9,7 @@ const InnovationSection = () => {
 
           {/* Left Column */}
           <div className="lg:col-span-4 flex flex-col justify-between space-y-10">
-            <div>
+            <div className="text-center lg:text-left">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-6 sm:mb-8 leading-tight">
                 Driving Global
                 <br />
@@ -29,7 +29,7 @@ const InnovationSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap sm:flex-nowrap sm:space-x-8 gap-4 pt-4">
+            <div className="flex flex-wrap sm:flex-nowrap sm:space-x-8 gap-4 pt-4 justify-center sm:justify-start">
               <button className="text-gray-500 text-xs sm:text-sm font-medium tracking-wide">
                 CREATION
               </button>

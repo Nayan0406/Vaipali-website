@@ -82,76 +82,71 @@ const ContactForm = () => {
           </div>
 
           {/* Right Side - Form */}
-          <div className="order-1 lg:order-2">
-            <div className="space-y-3">
+          <div className="order-1 lg:order-2 w-full max-w-3xl px-4 sm:px-6">
+            <div className="space-y-6">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-4">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 mt-4 text-center lg:text-left">
                   Let's Connect Constellations
                 </h2>
-                <p className="text-gray-400 text-base md:text-lg pb-2">
+                <p className="text-gray-400 text-base md:text-lg pb-2 text-center lg:text-left">
                   "Collaboration is the key to success. Contact us to begin your journey."
                 </p>
               </div>
 
-              <div className="space-y-6">
-                <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Fields */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mr-7">
-                  <div>
-                    <input
-                      type="text"
-                      name="firstName"
-                      id="firstname"
-                      placeholder="First Name"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      name="lastName"
-                      id='lastname'
-                      placeholder="Last Name"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400"
-                    />
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="firstname"
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400"
+                  />
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="lastname"
+                    placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400"
+                  />
                 </div>
-                <br/>
+
                 {/* Email */}
-                <div className='mr-7'>
+                <div>
                   <input
                     type="email"
                     name="email"
-                    id='email'
+                    id="email"
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400"
                   />
                 </div>
-                <br/>
+
                 {/* Phone */}
-                <div className='mr-7'>
+                <div>
                   <input
                     type="tel"
                     name="phone"
-                    id='phone'
+                    id="phone"
                     placeholder="Phone Number"
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400"
                   />
                 </div>
-                <br/>
+
                 {/* Message */}
-                <div className='mr-7'>
+                <div>
                   <textarea
                     name="message"
-                    id='message'
+                    id="message"
                     placeholder="Message"
                     rows="5"
                     value={formData.message}
@@ -159,22 +154,22 @@ const ContactForm = () => {
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all duration-300 text-white placeholder-gray-400 resize-none"
                   ></textarea>
                 </div>
-                <br/>
+
                 {/* Submit Button */}
-                <div className='pb-4 pr-7 '>
+                <div className='pb-5'>
                   <button
                     type="submit"
-                    className="w-full px-3 py-2 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-semibold rounded-lg hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 cursor-pointer"
+                    className="w-full px-3 py-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-semibold rounded-lg hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                   >
                     <span>Send it to the</span>
-                    <img src="/logo.png" alt="" />
+                    <img src="/logo.png" alt="Vaipali Logo" className="h-6 w-auto" />
                     <span>Vaipali</span>
                   </button>
                 </div>
-                </form>
-              </div>
+              </form>
             </div>
           </div>
+
         </div>
       </div>
     </div>
